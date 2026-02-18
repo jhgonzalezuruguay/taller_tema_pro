@@ -1,7 +1,39 @@
 library(shiny)
 
-ui <- navbarPage("Taller de Metodología de la Investigación",
-                 
+ui <- navbarPage("Taller de Tema y Problema",
+                                  
+                                  tags$head(
+                                    tags$style(HTML("
+                     
+                     /* Botones normales */
+                     .btn,
+                     .btn-default,
+                     .btn-primary {
+                       background-color: #90EE90 !important;
+                       border-color: #90EE90 !important;
+                       color: black !important;
+                       background-image: none !important;
+                     }
+                     
+                     /* Estados hover, focus y active */
+                     .btn:hover,
+                     .btn:focus,
+                     .btn:active,
+                     .btn-default:hover,
+                     .btn-default:focus,
+                     .btn-default:active,
+                     .btn-primary:hover,
+                     .btn-primary:focus,
+                     .btn-primary:active {
+                       background-color: #90EE90 !important;
+                       border-color: #90EE90 !important;
+                       color: black !important;
+                       box-shadow: none !important;
+                       outline: none !important;
+                     }
+                     
+                   "))
+                                  ),                 
                  # --------------------------
                  # CAPÍTULO II
                  # --------------------------
@@ -38,8 +70,8 @@ ui <- navbarPage("Taller de Metodología de la Investigación",
                           h4("Actividad práctica individual"),
                           p("Ejercicio: Formula un problema de investigación vinculado al tema 'Acceso a la Justicia'."),
                           textAreaInput("problemaAcceso", "Escribe tu problema de investigación:", width = "100%", height = "80px"),
-                          actionButton("solAcceso", "Ver respuesta sugerida"),
-                          textOutput("respAcceso"),
+                          actionButton("solAcceso", "Ver respuesta sugerida"),br(),
+                          textOutput("respAcceso"),br(),br(),
                           downloadButton("downloadProblema", "Descargar mi problema en .txt"),
                           br(),br(),
                           # --- Verdadero/Falso ---
@@ -92,10 +124,10 @@ ui <- navbarPage("Taller de Metodología de la Investigación",
                           h4("Flashcards: Tema y Problema"),
                           p("Usa estas tarjetas para repasar conceptos clave."),
                           actionButton("flashTema", "Ver definición de Tema"),
-                          textOutput("cardTema"),
+                          textOutput("cardTema"),br(),br(),
                           actionButton("flashProblema", "Ver definición de Problema"),
                           textOutput("cardProblema")
-                 )
+                 ),br(),br()
 )
 
 server <- function(input, output, session) {
