@@ -1,6 +1,6 @@
 library(shiny)
 
-ui <- navbarPage("Taller de Tema y Problema",
+ui <- navbarPage("Taller de Tema y Problema - Mag. José González",
                                   
                                   tags$head(
                                     tags$style(HTML("
